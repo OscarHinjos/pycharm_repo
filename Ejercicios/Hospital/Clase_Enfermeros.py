@@ -1,3 +1,4 @@
+#Importaciones
 import Clase_Persona
 
 
@@ -7,7 +8,7 @@ class Enfermeros(Clase_Persona.Persona):
         super().__init__(nombre, apellido, dni)
         self.planta_trabajo = planta_trabajo
 
-
+    #Funcion que atiende a los pacientes y devuelve un diccionairio de pacientes Clave: Nombre_paciente Valor: Sintomas pacientes
     def atender(self, pacientes):
         pacientes_consulta = {}
         for paciente in pacientes:

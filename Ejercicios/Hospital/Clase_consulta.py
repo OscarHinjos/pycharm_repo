@@ -1,3 +1,4 @@
+#Importaciones
 import Clase_Doctor as CDoctor
 import Clase_Pacientes as CPacientes
 import Clase_Enfermeros as CEnfermos
@@ -5,11 +6,12 @@ from random import *
 
 
 class Consulta():
-
+    
     def __init__(self,doctor):
         self.doctor = doctor
     
-
+    #Funcion que diagnostica a los pacientes que se le pasa por parametro
+    #Devuelve un diccionario de los pacientes 
     def diagnostico(self, paciente_sintomas):
         to_habitacion = {}
         print("Los doctores proceden a diagnosticar a los pacientes")
