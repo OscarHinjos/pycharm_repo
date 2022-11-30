@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alumnos</title>
+</head>
+<body>
+    <div>
+      <!-- For en Django -->
+      {% for alumno in listado_alumnos %}
+        <p>El alumno: {{alumno.Nombre}} con apellidos : {{alumno.Apellidos}}
+            tiene el dni: {{alumno.DNI}}</p>
+      {% endfor%}
+
+        <a  href="{% url 'inicio' %}">Volver al inicio </a> <br>
+    </div>
+    <form style="margin-top:20px">
+        <fieldset>
+            <legend>Prueba de DataList</legend>
+            <label>
+                Buscar:
+                <input type="text" name="agenda" list="agenda" />
+                <datalist id="agenda">
+                    {% for alumno in listado_alumnos %}
+                        <option value="{{alumno.Nombre}}" "></option>
+                    {% endfor%}
+                </datalist>
+            </label>
+
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Info Mundial</title>
+</head>
+<body>
+    <h1>Info Mundial</h1>
+    <form style="margin-top:20px">
+        <fieldset>
+            <legend>Equipos mundial</legend>
+            <label>
+                Buscar equipos:
+                <input type="text" name="equipos" list="equipos" />
+                <datalist id="equipos">
+                    {% for equipo in listado_equipos %}
+                        <option value="{{equipo.Seleccion}}"></option>
+                    {% endfor%}
+                </datalist>
+            </label>
+
+        </fieldset>
+    </form>
+    <br>
+    <table style="border:1px solid black">
+        {% for equipo in listado_equipos %}
+          <tr >
+            <th style="font-size:20px;border:1px solid black"><b>Seleccion</b></th>
+            <th style="font-size:20px;border:1px solid black"><b>Continente</b></th>
+            <th style="font-size:20px;border:1px solid black"><b>Numero Mundiales Ganados</b></th>
+          </tr>
+          <tr style="text-align:center">
+           <td style="border:1px solid black">{{equipo.Seleccion}}</td>
+           <td style="border:1px solid black"> {{equipo.Continente}}</td>
+           <td style="border:1px solid black">{{equipo.Mun_Ganados}}</td>
+          </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>
