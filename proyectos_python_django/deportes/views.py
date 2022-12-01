@@ -26,11 +26,15 @@ def mundial(request):
             n_equipo = {'Seleccion': n_selecion, 'Continente': n_continente, 'Mun_Ganados': n_mundiales}
 
             dic_equipos.append(n_equipo)
+        elif accion == 'filtrar':
+            g_dato = request.POST['filtro']
+            dic_equipos = list(filter(lambda equipo: equipo['Continente'] == g_dato,dic_equipos))
+
 
     elif request.method == "GET":
         pass
 
-    equipos = {'listado_equipos': dic_equipos}
+    equipos = {'listado_equipos': dic_equipos, }
 
     return render(request, 'InfoMundial/infoMundial.html', equipos)
 

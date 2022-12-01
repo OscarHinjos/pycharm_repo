@@ -6,7 +6,8 @@
 </head>
 <body>
     <h1>Info Mundial</h1>
-    <form style="margin-top:20px">
+    <form style="margin-top:20px" action="" method="POST">
+        {%csrf_token%}
         <fieldset>
             <legend>Equipos mundial</legend>
             <label>
@@ -14,11 +15,12 @@
                 <input type="text" name="equipos" list="equipos" />
                 <datalist id="equipos">
                     {% for equipo in listado_equipos %}
-                        <option value="{{equipo.Continente}}"></option>
+                        <option name="filtro" value="{{equipo.Continente}}"></option>
                     {% endfor%}
                 </datalist>
             </label>
-
+            <input type="hidden" name="filtrar" value="filtrar">
+            <input type="submit" value="Filtrar">
         </fieldset>
     </form>
     <br>
