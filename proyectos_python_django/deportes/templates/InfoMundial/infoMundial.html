@@ -14,7 +14,7 @@
                 <input type="text" name="equipos" list="equipos" />
                 <datalist id="equipos">
                     {% for equipo in listado_equipos %}
-                        <option value="{{equipo.Seleccion}}"></option>
+                        <option value="{{equipo.Continente}}"></option>
                     {% endfor%}
                 </datalist>
             </label>
@@ -22,19 +22,26 @@
         </fieldset>
     </form>
     <br>
-    <table style="border:1px solid black">
-        {% for equipo in listado_equipos %}
-          <tr >
+    <table style="border:1px solid black; width: 100%"
+    title="{{titulo_tabla}}">
+
+          <tr>
             <th style="font-size:20px;border:1px solid black"><b>Seleccion</b></th>
             <th style="font-size:20px;border:1px solid black"><b>Continente</b></th>
             <th style="font-size:20px;border:1px solid black"><b>Numero Mundiales Ganados</b></th>
           </tr>
+         {% for equipo in listado_equipos %}
           <tr style="text-align:center">
            <td style="border:1px solid black">{{equipo.Seleccion}}</td>
            <td style="border:1px solid black"> {{equipo.Continente}}</td>
            <td style="border:1px solid black">{{equipo.Mun_Ganados}}</td>
           </tr>
         {%endfor%}
+
     </table>
+    <ul>
+        <li><a href="{% url 'addTeam' %}">Añadir una nueva seleccion</a></li>
+        {{NSeleccion}}
+    </ul>
 </body>
 </html>

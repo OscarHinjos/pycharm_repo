@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path
 
 from bienvenida.views import bienvenido, listar_datos
-from deportes.views import deportes, mundial
+from deportes.views import deportes, mundial,addTeam
 
 urlpatterns = [
     path('', bienvenido, name='inicio'),
     path('admin/', admin.site.urls),
     path('deportes/', deportes, name='deportes'),
     path('deportes/infoMundial', mundial, name='infoMundial'),
+    path('deportes/infoMundial/AñadirSeleccion', addTeam, name='addTeam'),
     path('alumnos/listar_alumnos',listar_datos, name='listado_alumnos')
 ]

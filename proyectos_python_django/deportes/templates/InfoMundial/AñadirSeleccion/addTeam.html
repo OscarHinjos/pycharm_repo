@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Añadir seleccion</title>
+</head>
+<body>
+      <form style="margin-top:20px" action="/deportes/infoMundial" method="POST">
+          {%csrf_token%}
+          <label>Ingresar un nuevo equipo: </label><br>
+          <label>Seleccion: <input type="text" name="seleccion" id="seleccion" value=""></label><br>
+          <label>Continente: <input type="text" name="continente" id="continente" value=""></label><br>
+          <label>Mundiales ganados: <input type="number" name="num_mundiales" id="num_mundiales" value="0"></label><br>
+          <input type="hidden" name="accion" value="guardar">
+          <input type="submit" value="Ingresar equipo">
+    </form>
+    {{Equipo}}
+    <ul>
+        <li><a href="{% url 'infoMundial' %}">Ir a info mundial</a></li>
+        <li><a href="{% url 'deportes' %}">Ir a deportes</a></li>
+    </ul>
+</body>
+</html>

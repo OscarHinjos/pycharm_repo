@@ -9,11 +9,31 @@ def deportes(request):
 
 
 def mundial(request):
-    dic_equipos = [
-        {'Seleccion': 'España', 'Continente': 'Europa', 'Mun_Ganados': 1},
-        {'Seleccion': 'Brasil ', 'Continente': 'America', 'Mun_Ganados': 5},
-        {'Seleccion': 'Alemania  ', 'Continente': 'Europa', 'Mun_Ganados': 4},
+    dic_equipos = [{'Seleccion': 'España', 'Continente': 'Europa', 'Mun_Ganados': 1},
+                   {'Seleccion': 'Brasil ', 'Continente': 'America', 'Mun_Ganados': 5},
+                   {'Seleccion': 'Alemania  ', 'Continente': 'Europa', 'Mun_Ganados': 4},
 
-    ]
+                   ]
+
+    if request.method == 'POST':
+
+        accion = request.POST.get('accion', '')
+        print(accion)
+        if accion == 'guardar':
+            n_selecion = request.POST['seleccion']
+            n_continente = request.POST['continente']
+            n_mundiales = request.POST['num_mundiales']
+            n_equipo = {'Seleccion': n_selecion, 'Continente': n_continente, 'Mun_Ganados': n_mundiales}
+
+            dic_equipos.append(n_equipo)
+
+    elif request.method == "GET":
+        pass
+
     equipos = {'listado_equipos': dic_equipos}
-    return render(request,'InfoMundial/infoMundial.html', equipos)
+
+    return render(request, 'InfoMundial/infoMundial.html', equipos)
+
+
+def addTeam(request):
+    return render(request, 'InfoMundial/AñadirSeleccion/addTeam.html')
