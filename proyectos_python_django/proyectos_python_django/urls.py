@@ -18,6 +18,7 @@ from django.urls import path
 
 from bienvenida.views import bienvenido, listar_datos
 from deportes.views import deportes, mundial,addTeam
+from recoger_datos_bbd.views import recoger_datos
 
 urlpatterns = [
     path('', bienvenido, name='inicio'),
@@ -25,5 +26,6 @@ urlpatterns = [
     path('deportes/', deportes, name='deportes'),
     path('deportes/infoMundial', mundial, name='infoMundial'),
     path('deportes/infoMundial/AñadirSeleccion', addTeam, name='addTeam'),
-    path('alumnos/listar_alumnos',listar_datos, name='listado_alumnos')
+    path('alumnos/listar_alumnos',listar_datos, name='listado_alumnos'),
+    path('recoger_datos_bbd',recoger_datos, name='recogerDatos')
 ]

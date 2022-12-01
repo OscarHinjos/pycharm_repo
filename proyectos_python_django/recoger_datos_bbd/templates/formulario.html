@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario datos</title>
+</head>
+<body>
+ <form style="margin-top:20px" action="recoger_datos_bbd" method="POST">
+     {%csrf_token%}
+<!--     <label>Datos: </label><br>-->
+<!--     <label>Nombre: <input type="text" name="nombre" id="nombre" value=""></label><br>-->
+<!--     <label>Apellidos: <input type="text" name="apellidos" id="apellidos" value=""></label><br>-->
+<!--     <label>Edad: <input type="number" name="edad" id="edad" value=""></label><br>-->
+<!--     Ejemplo form auto-->
+     <table>
+         {{persona_form}}
+     </table>
+     <input type="submit" value="Ingresar datos">
+ </form>
+
+<h3 style="color:blue;">{{mensaje}}</h3>
+</body>
+</html>

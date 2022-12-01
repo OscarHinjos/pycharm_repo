@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'deportes',
     'bienvenida',
-    'clientes'
+    'clientes',
+    'recoger_datos_bbd'
 
 ]
 

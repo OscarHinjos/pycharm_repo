@@ -28,6 +28,3 @@ class Persona(models.Model):
                f"{self.apellidos}   {self.dni}  " \
                f"{self.email}"
 
-
-
-
